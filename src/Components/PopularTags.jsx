@@ -14,20 +14,19 @@ const POPULAR_TAGS = [
   return (
     <>
     <div>
-  <div className="flex items-center justify-between font-bold text-gray-900 mb-4 text-lg">
-    <h3>Popular Tag</h3>
-    <FiChevronDown className="text-sm text-gray-500" />
+  <div className="flex items-center justify-between font-medium font-pop text-[#1A1A1A] mb-5 text-[20px]">
+    
   </div>
 
-  <div className="flex flex-wrap gap-2">
+  <div className="grid grid-cols-3 text-center gap-2">
     {POPULAR_TAGS.map((tag, idx) => (
       <span
         key={idx}
         onClick={() => setSelectedTag(tag)}
-        className={`text-xs px-3 py-1.5 rounded-md cursor-pointer transition-all duration-200 ${
+        className={`text-[14px] px-3 py-1.5 rounded-full cursor-pointer transition-all duration-200 ${
           selectedTag === tag
-            ? "bg-[#00B207] text-white font-medium"
-            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            ? "bg-[#00B207] text-white font-normal font-pop"
+            : "bg-[#F2F2F2] text-[#1A1A1A] hover:bg-gray-200 "
         }`}
       >
         {tag}

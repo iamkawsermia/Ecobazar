@@ -57,10 +57,10 @@ export const Navbar = () => {
               <ul className="hidden md:flex items-center gap-x-6 lg:gap-x-8 text-sm font-pop font-medium ml-4 md:ml-10">
                 <li>
                   <Link
-                    to="#"
+                    to="/"
                     className="flex items-center gap-x-1 text-[#808080] hover:text-white"
                   >
-                    Home <FaAngleDown size={18} />
+                    Home 
                   </Link>
                 </li>
                 <li>
@@ -188,18 +188,21 @@ export const Navbar = () => {
           <div className="mb-6 border-b pb-4">
             <h3 className="text-sm font-semibold text-gray-500 mb-3 uppercase">Navigation</h3>
             <ul className="text-black">
-              <li className="flex border-b border-gray-100 items-center justify-between p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
+
+           <Link to="/"><li className="flex border-b border-gray-100 items-center justify-between p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
                 <div className="flex items-center gap-2">
                   Home
                 </div>
-                <FaAngleDown size={16} />
-              </li>
-              <li className="flex border-b border-gray-100 items-center justify-between p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
+               
+              </li></Link>
+
+           <Link to="/shop"><li className="flex border-b border-gray-100 items-center justify-between p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
                 <div className="flex items-center gap-2">
                   Shop
                 </div>
                 <FaAngleDown size={16} />
-              </li>
+              </li></Link>
+
               <li className="flex border-b border-gray-100 items-center justify-between p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
                 <div className="flex items-center gap-2">
                   Pages
@@ -212,12 +215,14 @@ export const Navbar = () => {
                 </div>
                 <FaAngleDown size={16} />
               </li>
-              <li className="flex border-b border-gray-100 items-center gap-2 p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
+
+           <Link to="/about"><li className="flex border-b border-gray-100 items-center gap-2 p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
                 About Us
-              </li>
-              <li className="flex items-center gap-2 p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
+              </li></Link>
+
+            <Link to="/contact"><li className="flex items-center gap-2 p-3 md:p-4 hover:bg-green-500 hover:text-white cursor-pointer">
                 Contact Us
-              </li>
+              </li></Link>
             </ul>
           </div>
         </div>

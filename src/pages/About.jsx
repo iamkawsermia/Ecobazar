@@ -10,6 +10,7 @@ import Star from '../assets/svg/Star.jsx';
 import { Container } from '../Components/Layout/Container';
 import { ClientTestimonials } from '../Components/Layout/ClientTestimonials.jsx';
 import CompanyName from '../Components/Layout/CompanyName.jsx';
+import OurTeam from '../Components/Layout/OurTeam.jsx';
 
 
 
@@ -17,8 +18,7 @@ import CompanyName from '../Components/Layout/CompanyName.jsx';
 
 const About = () => {
   return (
-    
-
+    <>
       <Container>
         <div className="py-20">
           <div className='flex justify-between items-center gap-x-10'>
@@ -119,13 +119,12 @@ const About = () => {
           </div>
         </div>
       </div>
-
-        <ClientTestimonials />
-
-
-        <CompanyName></CompanyName>
-      </Container>
+    </Container>
+    <OurTeam />
+    <ClientTestimonials />
     
+    <CompanyName hideInstagram={true} />
+  </>
   )
 }
 

@@ -4,12 +4,13 @@ import About from "./pages/About"
 import {Registation} from "./pages/Registation"
 import {Login} from "./pages/Login"
 import {Forget}from "./pages/Forget"
-import {Details} from "./pages/Details"
+import Details from "./pages/Details"
 import  {MainLayout}  from "./Components/Layout/MainLayout";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout"
 import  Cart  from "./pages/Cart";
 import  Shop  from "./pages/Shop";
+import  Faq  from "./pages/Faq";
 function App() {
 
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/Shop" element={<Shop />} />
+          <Route path="/Faq" element={<Faq />} />
         </Route>
       </Routes>
     </>

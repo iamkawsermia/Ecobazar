@@ -287,9 +287,10 @@ export default function Checkout() {
                 {/* Item 1 */}
                 <div className="flex items-center justify-between pb-4 border-b border-gray-100">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gray-50 flex items-center justify-center rounded">
+                    <div className=" bg-gray-50 flex items-center justify-center rounded">
                       <img 
-                        src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=100&auto=format&fit=crop&q=80" 
+                        src="https://res.cloudinary.com/m3raib7v/image/upload/v1783705560/products/wxwswtz1hwdnk0dhzndy.png" 
+
                         alt="Green Capsicum" 
                         className="w-10 h-10 object-contain"
                       />
@@ -302,9 +303,9 @@ export default function Checkout() {
                 {/* Item 2 */}
                 <div className="flex items-center justify-between pb-4 border-b border-gray-100">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-gray-50 flex items-center justify-center rounded">
+                    <div className=" bg-gray-50 flex items-center justify-center rounded">
                       <img 
-                        src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=100&auto=format&fit=crop&q=80" 
+                        src="https://res.cloudinary.com/m3raib7v/image/upload/v1783717086/products/gjtttp37chfa3jvuujto.png" 
                         alt="Red Capsicum" 
                         className="w-10 h-10 object-contain"
                       />

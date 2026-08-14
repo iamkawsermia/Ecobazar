@@ -13,9 +13,9 @@ import instagram5 from '../../assets/instafour.webp';
 import instagram6 from '../../assets/instafive.webp';
 
 import { Container } from './Container';
-import About from '../../pages/About';
 
-const CompanyName = () => {
+
+const CompanyName = ({ hideInstagram = false }) => {
    
     // Store current image for modal
     const [currentImage, setCurrentImage] = useState(null);
@@ -41,7 +41,7 @@ const CompanyName = () => {
          </marquee>
 
          {
-          <About/> &&
+          !hideInstagram &&
             <div className="py-8 md:py-10">
         <h2 className='text-2xl md:text-[32px] font-pop font-semibold text-[#1A1A1A] text-center mb-6 md:mb-8'>Follow us on Instagram</h2>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4'>

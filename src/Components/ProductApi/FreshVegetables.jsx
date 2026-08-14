@@ -3,7 +3,6 @@ import { Container } from '../Layout/Container'
 import axios from 'axios'
 import { GoArrowRight } from "react-icons/go";
 import { FaStar, FaStarHalfAlt, FaRegStar, FaHeart, FaEye, FaShoppingBag } from "react-icons/fa";
-import { Link } from 'react-router';
 export const FreshVegetables = () => {
 
  let [pro,setPro]=useState([])
@@ -42,59 +41,116 @@ export const FreshVegetables = () => {
   return (
     <>
       <Container>
-        <div className="main mt-[50px] ">
-          <div className="grid grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-x-6 gap-y-6 ">
-            {pro.map((item) => (
-              <div
-                key={item._id}
-                className="w-[312px] h-[350px] bg-white rounded-2xl border border-[#E5E5E5] shadow-[0_4px_18px_rgba(0,0,0,0.08)]  transition-all duration-300
-                 hover:border-emerald-600 hover:shadow-[0_0_0_1px_#16a34a,0_8px_30px_rgba(22,163,74,0.25)]  relative group"
-              >
-                <div className="p-4 flex items-center justify-center">
-                  <img
-                    src={item.thumbnail.url}
-                    alt={item.title.en}
-                    className="w-full h-48 object-contain"
-                  />
-                </div>
+  <div className="main mt-[5px]">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4">
+      {pro.map((item) => (
+        <div
+          key={item._id}
+          className="
+            w-full
+            h-[300px]
+            bg-white
+            rounded-md
+            border border-[#E5E5E5]
+            relative
+            group
+            overflow-hidden
+            transition-all
+            duration-300
+            hover:border-[#00B207]
+            hover:shadow-[0_0_0_1px_#00B207]
+          "
+        >
+          {/* Product Image */}
+          <div className="h-[210px] p-3 flex items-center justify-center">
+            <img
+              src={item.thumbnail.url}
+              alt={item.title.en}
+              className="w-full h-full object-contain"
+            />
+          </div>
 
-                <div className="ml-3">
-                  <div className="flex justify-between items-center mb-[6px]">
-                    <div className="">
-                      <h3 className="text-[16px] font-normal font-pop text-[#4D4D4D] hover:text-[#00B207]">
-                        {item.title.en}
-                      </h3>
-                      <p className="text-[16px] font-medium font-pop text-[#1A1A1A] mb-[6px]">
-                        ${item.price}
-                      </p>
-                      <span className="flex gap-1 text-[16px] font-medium font-pop text-[#1A1A1A]">
-                        {renderStars(item.rating)}
-                      </span>
-                    </div>
+          {/* Product Info */}
+          <div className="px-2.5">
+            <div className="flex justify-between items-end">
+              <div>
+                <h3 className="text-[14px] font-normal font-pop text-[#4D4D4D] hover:text-[#00B207]">
+                  {item.title.en}
+                </h3>
 
-                    <div className="flex justify-between">
-                      <div>
-                        <button className="w-8 h-8 bg-white border border-[#E5E5E5] rounded-full mr-[18px]  pl-[7px] hover:bg-[#00B207] hover:text-white transition-colors">
-                          <FaShoppingBag size={16} />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                <p className="text-[16px] font-medium font-pop text-[#1A1A1A]">
+                  ${item.price}
+                </p>
 
-                  <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center hover:bg-[#00B207] hover:text-white transition-colors">
-                      <FaHeart size={14} />
-                    </button>
-                    <button className="w-8 h-8 bg-white rounded-full shadow flex items-center justify-center hover:bg-[#00B207] hover:text-white transition-colors">
-                      <FaEye size={14} />
-                    </button>
-                  </div>
+                <div className="flex gap-1 text-[14px] w-[60px] text-[#FF8A00]">
+                  {renderStars(item.rating)}
                 </div>
               </div>
-            ))}
+
+              {/* Cart */}
+              <button
+                className="
+                  w-8 h-8
+                  bg-[#F2F2F2]
+                  rounded-full
+                  flex items-center justify-center
+                  hover:bg-[#00B207]
+                  hover:text-white
+                  transition-colors
+                "
+              >
+                <FaShoppingBag size={14} />
+              </button>
+            </div>
+          </div>
+
+          {/* Wishlist + Eye */}
+          <div
+            className="
+              absolute
+              top-3
+              right-3
+              flex flex-col gap-2
+              opacity-0
+              group-hover:opacity-100
+              transition-opacity duration-300
+            "
+          >
+            <button
+              className="
+                w-8 h-8
+                bg-white
+                rounded-full
+                shadow
+                flex items-center justify-center
+                hover:bg-[#00B207]
+                hover:text-white
+                transition-colors
+              "
+            >
+              <FaHeart size={14} />
+            </button>
+
+            <button
+              className="
+                w-8 h-8
+                bg-white
+                rounded-full
+                shadow
+                flex items-center justify-center
+                hover:bg-[#00B207]
+                hover:text-white
+                transition-colors
+              "
+            >
+              <FaEye size={14} />
+            </button>
           </div>
         </div>
-      </Container>
+      ))}
+    </div>
+  </div>
+</Container>
     </>
   );
 }
