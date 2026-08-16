@@ -10,7 +10,7 @@ export const FreshVegetables = () => {
  useEffect(() => {
   async function allpro() {
     const proData = await axios.get(
-      "https://ecobazar-api.onrender.com/api/products?category=fresh vegetables&limit=10"
+      "https://ecobazar-api.onrender.com/api/products?hotDeals=true&limit=12"
     );
 
     setPro(proData.data.data.products);

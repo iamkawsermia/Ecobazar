@@ -32,7 +32,7 @@ export default function ShopPage() {
   const [showPrice, setShowPrice] = useState(false);
   const [showRating, setShowRating] = useState(false);
   const [showTags, setShowTags] = useState(false);
-  const [showAllFilters, setShowAllFilters] = useState(false);
+  const [showAllFilters, setShowAllFilters] = useState(true);
 
   return (
     <>
