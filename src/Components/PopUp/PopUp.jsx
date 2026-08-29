@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
-import PopPic from '../../assets/PopPic.webp'
+import React, { useEffect, useRef, useState } from "react";
+import PopPic from "../../assets/PopPic.webp";
+import { useOutside } from "../Hooks/Outside";
+
 const PopUp = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
 
+  const popupRef = useRef(null);
+
   useEffect(() => {
-  
     setIsOpen(true);
   }, []);
+
+  useOutside(popupRef, setIsOpen, isOpen);
 
   const closePopup = () => {
     setIsOpen(false);
@@ -28,8 +33,11 @@ const PopUp = () => {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
 
-      <div className="relative w-full max-w-[990px] rounded-xl bg-white overflow-hidden">
-
+      {/* Popup */}
+      <div
+        ref={popupRef}
+        className="relative w-full max-w-[990px] rounded-xl bg-white overflow-hidden"
+      >
         {/* Close */}
         <button
           onClick={closePopup}
@@ -65,7 +73,7 @@ const PopUp = () => {
                   20%
                 </span>
                 <br />
-                <span className=" text-[16px] font-pop font-semibold text-orange-500">
+                <span className="text-[16px] font-pop font-semibold text-orange-500">
                   money
                 </span>{" "}
                 with discount code today.
@@ -101,4 +109,3 @@ const PopUp = () => {
 };
 
 export default PopUp;
-

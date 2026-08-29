@@ -3,7 +3,7 @@ import { Container } from '../Layout/Container'
 import axios from 'axios'
 import { GoArrowRight } from "react-icons/go";
 import { FaStar, FaStarHalfAlt, FaRegStar, FaHeart, FaEye, FaShoppingBag } from "react-icons/fa";
-export const FreshVegetables = () => {
+export const FreshVegetables = ({ filterOpen = true }) => {
 
  let [pro,setPro]=useState([])
     
@@ -42,7 +42,7 @@ export const FreshVegetables = () => {
     <>
       <Container>
   <div className="main mt-[5px]">
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4">
+    <div className={`grid grid-cols-2 sm:grid-cols-2 ${filterOpen ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-x-4 gap-y-4`}>
       {pro.map((item) => (
         <div
           key={item._id}
